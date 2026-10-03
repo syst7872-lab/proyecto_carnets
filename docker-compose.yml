@@ -15,7 +15,7 @@ services:
       - DB_HOST=postgres-moodle
       - DB_PORT=5432
     ports:
-      - "8000:8000"
+      - "8080:8001"
     volumes:
       - carnets_media:/app/media
     networks:
