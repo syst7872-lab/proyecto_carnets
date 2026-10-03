@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: carnets_web
+    restart: always
+    environment:
+      - SECRET_KEY=clave_secreta_django_carnets_123
+      - DEBUG=False
+      - ALLOWED_HOSTS=198.46.215.218,localhost
+      - DB_NAME=moodle
+      - DB_USER=moodleuser
+      - DB_PASSWORD=TuPasswordSeguraAqui123
+      - DB_HOST=postgres-moodle
+      - DB_PORT=5432
+    ports:
+      - "8000:8000"
+    volumes:
+      - carnets_media:/app/media
+    networks:
+      - red-publica
+
+volumes:
+  carnets_media:
+    driver: local
+
+networks:
+  red-publica:
+    external: true
