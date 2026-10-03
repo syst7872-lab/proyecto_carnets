@@ -11,7 +11,7 @@ services:
       - ALLOWED_HOSTS=198.46.215.218,localhost
       - DB_NAME=moodle
       - DB_USER=moodleuser
-      - DB_PASSWORD=TuPasswordSeguraAqui123
+      - DB_PASSWORD=bbdd2612255
       - DB_HOST=postgres-moodle
       - DB_PORT=5432
     ports:
