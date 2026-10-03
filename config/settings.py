@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bd_1rsec',
-        'USER': 'postgres',
-        'PASSWORD': 'admin123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.environ.get('DB_NAME', 'moodle'),
+        'USER': os.environ.get('DB_USER', 'moodleuser'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'bbdd2612255'),
+        'HOST': os.environ.get('DB_HOST', 'postgres-moodle'),  # <-- DEBE SER postgres-moodle
+        'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
 
